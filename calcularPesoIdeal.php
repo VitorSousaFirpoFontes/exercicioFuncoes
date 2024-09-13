@@ -7,30 +7,31 @@
 </head>
 <body>
 <form action="" method= "get">
-<label for="">Digite o seu peso</label> 
-<input type="number" name="peso" id="numero">
+<label for="">Digite sua altura</label> 
+<input type="number" name="altura" id="numero"> <br>
 
 <label for="">Homem</label>
 <input type="checkbox" name="homem" value="1">
 
 <label for="">Mulher</label>
-<input type="checkbox" name="mulher" value="2">
+<input type="checkbox" name="mulher" value="2"> <br>
 <input type="submit">
 </form>
 
 
 <?php 
-if (isset($_GET['peso'])) {
-$peso = $_GET['peso'];
-$genero = $_GET['homem'];
+if (isset($_GET['altura'])) {
+$altura = $_GET['altura'];
 }
 
 
 if (isset($_GET['homem'])) {
-    echo 'voce e homi';
+    $peso_ideal = (72.2* $altura) - 58;
+    echo '<br> <br> Seu peso ideial é ' . $peso_ideal;
 }
 if (isset($_GET['mulher'])) {
-    echo 'voce e muie';
+    $peso_ideal = (62.1* $altura) - 44.7;
+    echo '<br> <br> Seu peso ideial é ' . $peso_ideal;
 }
 
 
